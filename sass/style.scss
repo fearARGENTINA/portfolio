@@ -62,7 +62,7 @@
 			float: left;
 			padding: 0;
 			margin: 0;
-			width: 200px;
+			width: 400px;
 			visibility: hidden;
 			position: absolute;
 			top: 150px;
@@ -79,15 +79,16 @@
 			a {
 				color: $color1;
 				text-decoration: none;
-				padding: 5px;
+				padding: 10px;
 				margin: 0;
-				font-size: 10px;
+				font-size: 50px;
 				font-weight: bold;
 				display: block;
 				text-align: center;
-					
+				background-color: $color3;
+
 				&:hover {
-					background-color: $color3;
+					background-color: darken($color3, 10%);
 				}
 
 				&:not(:last-child) {

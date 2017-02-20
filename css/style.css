@@ -50,7 +50,7 @@
       float: left;
       padding: 0;
       margin: 0;
-      width: 200px;
+      width: 400px;
       visibility: hidden;
       position: absolute;
       top: 150px;
@@ -63,14 +63,15 @@
       nav ul.nav a {
         color: #252323;
         text-decoration: none;
-        padding: 5px;
+        padding: 10px;
         margin: 0;
-        font-size: 10px;
+        font-size: 50px;
         font-weight: bold;
         display: block;
-        text-align: center; }
+        text-align: center;
+        background-color: #f5f1ed; }
         nav ul.nav a:hover {
-          background-color: #f5f1ed; }
+          background-color: #e3d8cc; }
         nav ul.nav a:not(:last-child) {
           border-bottom: 1px solid #dad2bc; }
     nav ul.social {
