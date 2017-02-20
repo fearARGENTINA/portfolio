@@ -29,7 +29,7 @@
 	nav {
 		z-index: 9999;
 		width: 100%;
-		height: 40px;
+		height: 150px;
 		padding: 0 30px;
 		margin: auto;
 		position: fixed;
@@ -38,11 +38,12 @@
 		text-transform: uppercase;
 		text-decoration: none;
 		font-family: "Comfortaa";
+		font-size: 80px;
 		box-sizing: border-box;
 		@include gradiente1;
 
 		div.menu {
-			line-height: 40px;
+			line-height: 150px;
 			width: 200px;
 			font-weight: bold;
 			display: inline-block;
@@ -64,7 +65,7 @@
 			width: 200px;
 			visibility: hidden;
 			position: absolute;
-			top: 40px;
+			top: 150px;
 			height: auto;
 			opacity: 0;
 
@@ -100,17 +101,17 @@
 		ul.social {
 			display: inline-block;
 			float: right;
-			height: 40px;
+			height: 150px;
 			width: auto;
 			padding: 0;
 
 			li {
-				margin: 10px 0;
-				line-height: 20px;
+				margin: 35px 0;
+				line-height: 80px;
 				display: inline-block;
-				width: 20px;
-				height: 20px;
-				font-size: 14px;
+				width: 80px;
+				height: 80px;
+				font-size: 50px;
 				text-align: center;
 				color: white;
 				transition: all 0.5s linear;
@@ -152,37 +153,40 @@
 		font-family: "Roboto", sans-serif;
 		font-weight: 900;
 		color: $color1;
-		margin: 10px 0 0 0;
+		margin: 150px 0 0 0;
 		width: 100%;
 		height: 250px;
 		background-image: url("../images/background-header.jpg");
 		background-size: cover;
-		padding: 60px 0;
+		padding: 100px 0;
 		overflow: hidden;
 		position: relative;
 
 		&::before {
 			content: "";
-			z-index: 1;
+			position: absolute;
+			z-index: 2;
 			width: 100%;
 			height: 100%;
 			background: inherit;
-			@include blur(2px);
+			@include blur(5px);
 		}
 		
 		h1 {
+			position: absolute;
 			z-index: 3;
 			height: 30px;
-			font-size: 30px;
+			font-size: 80px;
 			margin: 60px 0 0 100px;
 			text-transform: uppercase;
 		}
 
 		h2 {
+			position: absolute;
 			z-index: 3;
 			height: 30px;
-			font-size: 20px;
-			margin: 10px 0 0 200px;
+			font-size: 40px;
+			margin: 130px 0 0 200px;
 			text-transform: uppercase;
 		}
 	}
