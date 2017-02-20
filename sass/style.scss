@@ -22,8 +22,8 @@
 /*Smartphones */
 @media screen and (max-device-width: 768px) {
 	body {
-		max-width: 768px;
 		width: 100%;
+		margin: 0;
 	}
 
 	nav {
@@ -63,7 +63,7 @@
 			margin: 0;
 			width: 200px;
 			visibility: hidden;
-			position: relative;
+			position: absolute;
 			top: 40px;
 			height: auto;
 			opacity: 0;
