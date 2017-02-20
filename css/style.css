@@ -1,0 +1,216 @@
+/* Coolors Exported Palette - coolors.co/252323-70798c-f5f1ed-dad2bc-a99985 */
+/* HSL */
+/* RGB */
+@import "http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css";
+/* GRADIENTES */
+/*Smartphones */
+@media screen and (max-device-width: 768px) {
+  body {
+    max-width: 768px;
+    width: 100%; }
+
+  nav {
+    z-index: 9999;
+    width: 100%;
+    height: 40px;
+    padding: 0 30px;
+    margin: auto;
+    position: fixed;
+    top: 0;
+    background-color: #70798c;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: "Comfortaa";
+    box-sizing: border-box;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#70798c+1,708c91+100 */
+    background: #70798c;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #70798c 1%, #708c91 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #70798c 1%, #708c91 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #70798c 1%, #708c91 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#70798c', endColorstr='#708c91',GradientType=0 );
+    /* IE6-9 */ }
+    nav div.menu {
+      line-height: 40px;
+      width: 200px;
+      font-weight: bold;
+      display: inline-block;
+      position: absolute;
+      color: #252323; }
+      nav div.menu:hover + ul.nav {
+        opacity: 1;
+        visibility: visible; }
+    nav ul.nav {
+      display: inline-block;
+      height: 0;
+      float: left;
+      padding: 0;
+      margin: 0;
+      width: 200px;
+      visibility: hidden;
+      position: relative;
+      top: 40px;
+      height: auto;
+      opacity: 0;
+      transition: opacity 1s linear; }
+      nav ul.nav:hover {
+        visibility: visible;
+        opacity: 1; }
+      nav ul.nav a {
+        color: #252323;
+        text-decoration: none;
+        padding: 5px;
+        margin: 0;
+        font-size: 10px;
+        font-weight: bold;
+        display: block;
+        text-align: center; }
+        nav ul.nav a:hover {
+          background-color: #f5f1ed; }
+        nav ul.nav a:not(:last-child) {
+          border-bottom: 1px solid #dad2bc; }
+    nav ul.social {
+      display: inline-block;
+      float: right;
+      height: 40px;
+      width: auto;
+      padding: 0; }
+      nav ul.social li {
+        margin: 10px 0;
+        line-height: 20px;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        font-size: 14px;
+        text-align: center;
+        color: white;
+        transition: all 0.5s linear;
+        -ms-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -o-border-radius: 50%;
+        border-radius: 50%; }
+        nav ul.social li.fb {
+          background-color: #365396; }
+          nav ul.social li.fb:hover {
+            background-color: #6986c9; }
+        nav ul.social li.tw {
+          background-color: #00a8f0; }
+          nav ul.social li.tw:hover {
+            background-color: #57cdff; }
+        nav ul.social li.ln {
+          background-color: #006eb3; }
+          nav ul.social li.ln:hover {
+            background-color: #1aa7ff; }
+        nav ul.social li:hover {
+          transform: scale(1.5); }
+      nav ul.social li:not(:first-child) {
+        margin-left: 10px; }
+
+  header {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    color: #252323;
+    margin: 10px 0 0 0;
+    width: 100%;
+    height: 250px;
+    background-image: url("../images/background-header.jpg");
+    background-size: cover;
+    padding: 60px 0;
+    overflow: hidden;
+    position: relative; }
+    header::before {
+      content: "";
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      background: inherit;
+      -webkit-filter: blur(5px);
+      -moz-filter: blur(5px);
+      -o-filter: blur(5px);
+      -ms-filter: blur(5px);
+      filter: blur(5px); }
+    header h1 {
+      z-index: 3;
+      height: 30px;
+      font-size: 30px;
+      margin: 60px 0 0 100px;
+      text-transform: uppercase; }
+    header h2 {
+      z-index: 3;
+      height: 30px;
+      font-size: 20px;
+      margin: 10px 0 0 200px;
+      text-transform: uppercase; }
+
+  section {
+    width: 100%;
+    height: auto;
+    background-color: #a99985;
+    padding: 30px;
+    box-sizing: border-box; }
+    section * {
+      margin: auto; }
+    section h3 {
+      font-family: "Roboto", sans-serif;
+      font-size: 20px;
+      text-transform: uppercase;
+      font-weight: 900;
+      color: #252323;
+      max-width: 200px;
+      width: auto;
+      margin: 0 30px;
+      text-align: center;
+      border-bottom: 1px dashed #dad2bc; }
+    section div.contenedor {
+      margin: 10px 0;
+      width: 100%; }
+      section div.contenedor article {
+        position: relative;
+        font-size: 60px;
+        display: inline-block;
+        margin: 30px; }
+        section div.contenedor article::after {
+          text-transform: uppercase;
+          font-size: 20px;
+          font-family: "Comfortaa";
+          position: absolute;
+          bottom: -20px;
+          display: block; }
+        section div.contenedor article.ion-social-html5 {
+          color: #e34f26; }
+          section div.contenedor article.ion-social-html5::after {
+            content: "HTML5";
+            left: -20px; }
+        section div.contenedor article.ion-social-css3 {
+          color: #3b5998; }
+          section div.contenedor article.ion-social-css3::after {
+            content: "CSS3";
+            left: -10px; }
+        section div.contenedor article.ion-social-sass {
+          color: #fd5c63; }
+          section div.contenedor article.ion-social-sass::after {
+            left: -3px;
+            content: "SASS"; }
+        section div.contenedor article.ion-social-python {
+          color: #4584b6; }
+          section div.contenedor article.ion-social-python::after {
+            left: -10px;
+            text-transform: none;
+            content: "Python"; }
+        section div.contenedor article.ion-android-phone-portrait {
+          color: #a4c639; }
+          section div.contenedor article.ion-android-phone-portrait::after {
+            left: -30px;
+            content: "Responsive";
+            text-transform: none; } }
+/*
+width: auto;
+text-align: center;
+border-bottom: 1px dashed $color4;Tablets y iPads */
+/* Laptops y Desktop PCs */
+
+/*# sourceMappingURL=style.css.map */

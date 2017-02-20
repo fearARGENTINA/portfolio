@@ -1,0 +1,296 @@
+@import "colors";
+@import "http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css";
+@import "social_colors";
+@import "gradientes";
+
+@mixin border-radius($radio) {
+	-ms-border-radius: $radio;
+	-moz-border-radius: $radio;
+	-webkit-border-radius: $radio;
+	-o-border-radius: $radio;
+	border-radius: $radio;	
+}
+
+@mixin blur($cantidad) {
+	-webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
+	-o-filter: blur(5px);
+	-ms-filter: blur(5px);
+	filter: blur(5px);	
+}
+
+/*Smartphones */
+@media screen and (max-device-width: 768px) {
+	body {
+		max-width: 768px;
+		width: 100%;
+	}
+
+	nav {
+		z-index: 9999;
+		width: 100%;
+		height: 40px;
+		padding: 0 30px;
+		margin: auto;
+		position: fixed;
+		top: 0;
+		background-color: $color2;
+		text-transform: uppercase;
+		text-decoration: none;
+		font-family: "Comfortaa";
+		box-sizing: border-box;
+		@include gradiente1;
+
+		div.menu {
+			line-height: 40px;
+			width: 200px;
+			font-weight: bold;
+			display: inline-block;
+			position: absolute;
+			color: $color1;
+
+			&:hover + ul.nav {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+
+		ul.nav {
+			display: inline-block;
+			height: 0;
+			float: left;
+			padding: 0;
+			margin: 0;
+			width: 200px;
+			visibility: hidden;
+			position: relative;
+			top: 40px;
+			height: auto;
+			opacity: 0;
+
+			transition: opacity 1s linear;
+
+			&:hover {
+				visibility: visible;
+				opacity: 1;
+			}
+
+			a {
+				color: $color1;
+				text-decoration: none;
+				padding: 5px;
+				margin: 0;
+				font-size: 10px;
+				font-weight: bold;
+				display: block;
+				text-align: center;
+					
+				&:hover {
+					background-color: $color3;
+				}
+
+				&:not(:last-child) {
+					border-bottom: 1px solid $color4;
+				}
+		
+			}
+			
+		}
+
+		ul.social {
+			display: inline-block;
+			float: right;
+			height: 40px;
+			width: auto;
+			padding: 0;
+
+			li {
+				margin: 10px 0;
+				line-height: 20px;
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				font-size: 14px;
+				text-align: center;
+				color: white;
+				transition: all 0.5s linear;
+				@include border-radius(50%);
+
+				&.fb {
+					background-color: $facebook_color;
+					&:hover {
+						background-color: lighten($facebook_color, 20%);
+					}
+				}
+
+				&.tw {
+					background-color: $twitter_color;
+					&:hover {
+						background-color: lighten($twitter_color, 20%);;
+					}
+				}
+
+				&.ln {
+					background-color: $linkedin_color;
+					&:hover {
+						background-color: lighten($linkedin_color, 20%);;
+					}
+				}
+
+				&:hover {
+					transform: scale(1.5);
+				}
+			}
+
+			li:not(:first-child) {
+				margin-left: 10px;
+			}
+		}
+	}
+
+	header {
+		font-family: "Roboto", sans-serif;
+		font-weight: 900;
+		color: $color1;
+		margin: 10px 0 0 0;
+		width: 100%;
+		height: 250px;
+		background-image: url("../images/background-header.jpg");
+		background-size: cover;
+		padding: 60px 0;
+		overflow: hidden;
+		position: relative;
+
+		&::before {
+			content: "";
+			z-index: 1;
+			width: 100%;
+			height: 100%;
+			background: inherit;
+			@include blur(2px);
+		}
+		
+		h1 {
+			z-index: 3;
+			height: 30px;
+			font-size: 30px;
+			margin: 60px 0 0 100px;
+			text-transform: uppercase;
+		}
+
+		h2 {
+			z-index: 3;
+			height: 30px;
+			font-size: 20px;
+			margin: 10px 0 0 200px;
+			text-transform: uppercase;
+		}
+	}
+
+	section {
+		width: 100%;
+		height: auto;
+		background-color: $color5;
+		padding: 30px;
+		box-sizing: border-box;
+
+		* {
+			margin: auto;
+		}
+
+		h3 {
+			font-family: "Roboto", sans-serif;
+			font-size: 20px;
+			text-transform: uppercase;
+			font-weight: 900;
+			color: $color1;
+			max-width: 200px;
+			width: auto;
+			margin: 0 30px;
+			text-align: center;
+			border-bottom: 1px dashed $color4;
+		}
+
+		div.contenedor {
+
+			margin:10px 0;
+			width: 100%;
+
+			article {
+				position: relative;
+				font-size: 60px;
+				display: inline-block;
+				margin: 30px;
+
+				&::after {
+					text-transform: uppercase;
+					font-size: 20px;
+					font-family: "Comfortaa";
+					position: absolute;
+					bottom: -20px;
+					display: block;
+				}
+
+				&.ion-social-html5 {
+					color: #e34f26;
+				
+					&::after {
+						content: "HTML5";
+						left: -20px;
+					}
+				}
+
+				&.ion-social-css3 {
+					color: #3b5998;
+
+					&::after {
+						content: "CSS3";
+						left: -10px;
+					}
+				}
+
+				&.ion-social-sass {
+					color: #fd5c63;
+				
+					&::after {
+						left: -3px;
+						content: "SASS";
+					}
+				}
+
+				&.ion-social-python {
+					color: #4584b6;
+
+					&::after {
+						left: -10px;
+						text-transform: none;
+						content: "Python";
+					}
+				}
+
+				&.ion-android-phone-portrait {
+					color: #a4c639;
+
+					&::after {
+						left: -30px;
+						content: "Responsive";
+						text-transform: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+/*
+width: auto;
+text-align: center;
+border-bottom: 1px dashed $color4;Tablets y iPads */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+}
+
+/* Laptops y Desktop PCs */
+@media screen and (min-width: 1025px) {
+
+}
