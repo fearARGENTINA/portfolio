@@ -1,5 +1,5 @@
 @import "colors";
-@import "http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css";
+@import "https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css";
 @import "social_colors";
 @import "gradientes";
 
@@ -81,7 +81,7 @@
 				text-decoration: none;
 				padding: 10px;
 				margin: 0;
-				font-size: 50px;
+				font-size: 30px;
 				font-weight: bold;
 				display: block;
 				text-align: center;
@@ -157,22 +157,22 @@
 		margin: 150px 0 0 0;
 		width: 100%;
 		height: 250px;
-		background-image: url("../images/background-header.jpg");
-		background-size: cover;
 		padding: 100px 0;
 		overflow: hidden;
 		position: relative;
-
-		&::before {
-			content: "";
+		
+		div.page-bg {
+			background-image: url("../images/background-header.jpg");
 			position: absolute;
-			z-index: 2;
 			width: 100%;
 			height: 100%;
-			background: inherit;
-			@include blur(5px);
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+			top: 0;
+			@include blur(15px);
 		}
-		
+
 		h1 {
 			position: absolute;
 			z-index: 3;
@@ -192,11 +192,12 @@
 		}
 	}
 
-	section {
+	section#conocimientos {
+
 		width: 100%;
 		height: auto;
 		background-color: $color5;
-		padding: 30px;
+		padding: 60px 30px;
 		box-sizing: border-box;
 
 		* {
@@ -205,7 +206,7 @@
 
 		h3 {
 			font-family: "Roboto", sans-serif;
-			font-size: 20px;
+			font-size: 50px;
 			text-transform: uppercase;
 			font-weight: 900;
 			color: $color1;
@@ -216,72 +217,30 @@
 			border-bottom: 1px dashed $color4;
 		}
 
-		div.contenedor {
+		article {
+			display: inline-block;
+			margin: 30px;
+			width: auto;
+			font-size: 50px;
+			font-family: "Roboto";
+			&.html {
+				color: $html_color;
+			}
 
-			margin:10px 0;
-			width: 100%;
+			&.css {
+				color: $css_color;
+			}
 
-			article {
-				position: relative;
-				font-size: 60px;
-				display: inline-block;
-				margin: 30px;
+			&.sass {
+				color: $sass_color;
+			}
 
-				&::after {
-					text-transform: uppercase;
-					font-size: 20px;
-					font-family: "Comfortaa";
-					position: absolute;
-					bottom: -20px;
-					display: block;
-				}
+			&.responsive {
+				color: $respon_color;
+			}
 
-				&.ion-social-html5 {
-					color: #e34f26;
-				
-					&::after {
-						content: "HTML5";
-						left: -20px;
-					}
-				}
-
-				&.ion-social-css3 {
-					color: #3b5998;
-
-					&::after {
-						content: "CSS3";
-						left: -10px;
-					}
-				}
-
-				&.ion-social-sass {
-					color: #fd5c63;
-				
-					&::after {
-						left: -3px;
-						content: "SASS";
-					}
-				}
-
-				&.ion-social-python {
-					color: #4584b6;
-
-					&::after {
-						left: -10px;
-						text-transform: none;
-						content: "Python";
-					}
-				}
-
-				&.ion-android-phone-portrait {
-					color: #a4c639;
-
-					&::after {
-						left: -30px;
-						content: "Responsive";
-						text-transform: none;
-					}
-				}
+			i {
+				margin-right: 15px;
 			}
 		}
 	}
