@@ -3,6 +3,31 @@
 @import "social_colors";
 @import "gradientes";
 
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+
+@-ms-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+
+@-o-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
 @mixin border-radius($radio) {
 	-ms-border-radius: $radio;
 	-moz-border-radius: $radio;
@@ -17,6 +42,41 @@
 	-o-filter: blur(5px);
 	-ms-filter: blur(5px);
 	filter: blur(5px);	
+}
+
+@mixin animation-name($nombre) {
+	-webkit-animation-name: spin;
+	-moz-animation-name: spin;
+	-o-animation-name: spin;
+	-ms-animation-name: spin;
+}
+
+@mixin animation-duration($tiempo) {
+	-webkit-animation-duration: $tiempo;
+	-moz-animation-duration: $tiempo;
+	-o-animation-duration: $tiempo;
+	-ms-animation-duration: $tiempo;
+}
+
+@mixin animation-iteration-count($tipo) {
+	-webkit-animation-iteration-count: $tipo;
+	-moz-animation-iteration-count: $tipo;
+	-ms-animation-iteration-count: $tipo;
+	-o-animation-iteration-count: $tipo;
+}
+
+@mixin animation-timing-function($tipo) {
+	-webkit-animation-timing-fuction: $tipo;
+	-moz-animation-timing-fuction: $tipo;
+	-ms-animation-timing-fuction: $tipo;
+	-o-animation-timing-fuction: $tipo;
+}
+
+@mixin animation-delay($tiempo) {
+	-webkit-animation-delay: $tiempo;
+	-moz-animation-delay: $tiempo;
+	-ms-animation-delay: $tiempo;
+	-o-animation-delay: $tiempo;
 }
 
 /*Smartphones */
@@ -192,31 +252,30 @@
 		}
 	}
 
-	section#conocimientos {
+	h3 {
+		font-family: "Roboto", sans-serif;
+		font-size: 50px;
+		text-transform: uppercase;
+		font-weight: 900;
+		color: $color1;
+		max-width: 300px;
+		width: auto;
+		margin: 0 30px;
+		text-align: center;
+		border-bottom: 1px dashed $color4;
+	}
 
+	section {
 		width: 100%;
 		height: auto;
-		background-color: $color5;
 		padding: 60px 30px;
 		box-sizing: border-box;
+	}
 
-		* {
-			margin: auto;
-		}
+	section#conocimientos {
 
-		h3 {
-			font-family: "Roboto", sans-serif;
-			font-size: 50px;
-			text-transform: uppercase;
-			font-weight: 900;
-			color: $color1;
-			max-width: 200px;
-			width: auto;
-			margin: 0 30px;
-			text-align: center;
-			border-bottom: 1px dashed $color4;
-		}
-
+		background-color: $color5;
+		
 		article {
 			display: inline-block;
 			margin: 30px;
@@ -244,10 +303,39 @@
 			}
 		}
 	}
+
+	section#estudios{
+		background-color: $color3;
+		
+		.ion-load-a::before {
+			@include animation-name(spin);
+			@include animation-duration(500ms);
+			@include animation-iteration-count(infinite);
+			@include animation-timing-function(linear);
+			@include animation-delay(0);
+		}
+
+		font-size: 35px;
+		font-family: "Roboto", sans-serif;
+
+		table {
+			margin: 20px auto;
+			tr {
+
+				&:not(:last-child) td {
+					padding-bottom: 30px;
+				}
+
+				i {
+					margin-right: 15px;
+				}
+			}
+		}
+	}
 }
 
 /*
-width: auto;
+width: auto;	
 text-align: center;
 border-bottom: 1px dashed $color4;Tablets y iPads */
 @media screen and (min-width: 769px) and (max-width: 1024px) {

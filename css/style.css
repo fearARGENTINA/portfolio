@@ -3,6 +3,31 @@
 /* RGB */
 @import "https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css";
 /* GRADIENTES */
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg); }
+  to {
+    -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg); } }
+@-ms-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg); } }
+@-o-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg); } }
+@keyframes spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
 /*Smartphones */
 @media screen and (max-device-width: 768px) {
   body {
@@ -151,25 +176,26 @@
       margin: 130px 0 0 200px;
       text-transform: uppercase; }
 
-  section#conocimientos {
+  h3 {
+    font-family: "Roboto", sans-serif;
+    font-size: 50px;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #252323;
+    max-width: 300px;
+    width: auto;
+    margin: 0 30px;
+    text-align: center;
+    border-bottom: 1px dashed #dad2bc; }
+
+  section {
     width: 100%;
     height: auto;
-    background-color: #a99985;
     padding: 60px 30px;
     box-sizing: border-box; }
-    section#conocimientos * {
-      margin: auto; }
-    section#conocimientos h3 {
-      font-family: "Roboto", sans-serif;
-      font-size: 50px;
-      text-transform: uppercase;
-      font-weight: 900;
-      color: #252323;
-      max-width: 200px;
-      width: auto;
-      margin: 0 30px;
-      text-align: center;
-      border-bottom: 1px dashed #dad2bc; }
+
+  section#conocimientos {
+    background-color: #a99985; }
     section#conocimientos article {
       display: inline-block;
       margin: 30px;
@@ -185,9 +211,41 @@
       section#conocimientos article.responsive {
         color: black; }
       section#conocimientos article i {
+        margin-right: 15px; }
+
+  section#estudios {
+    background-color: #f5f1ed;
+    font-size: 35px;
+    font-family: "Roboto", sans-serif; }
+    section#estudios .ion-load-a::before {
+      -webkit-animation-name: spin;
+      -moz-animation-name: spin;
+      -o-animation-name: spin;
+      -ms-animation-name: spin;
+      -webkit-animation-duration: 500ms;
+      -moz-animation-duration: 500ms;
+      -o-animation-duration: 500ms;
+      -ms-animation-duration: 500ms;
+      -webkit-animation-iteration-count: infinite;
+      -moz-animation-iteration-count: infinite;
+      -ms-animation-iteration-count: infinite;
+      -o-animation-iteration-count: infinite;
+      -webkit-animation-timing-fuction: linear;
+      -moz-animation-timing-fuction: linear;
+      -ms-animation-timing-fuction: linear;
+      -o-animation-timing-fuction: linear;
+      -webkit-animation-delay: 0;
+      -moz-animation-delay: 0;
+      -ms-animation-delay: 0;
+      -o-animation-delay: 0; }
+    section#estudios table {
+      margin: 20px auto; }
+      section#estudios table tr:not(:last-child) td {
+        padding-bottom: 30px; }
+      section#estudios table tr i {
         margin-right: 15px; } }
 /*
-width: auto;
+width: auto;	
 text-align: center;
 border-bottom: 1px dashed $color4;Tablets y iPads */
 /* Laptops y Desktop PCs */
