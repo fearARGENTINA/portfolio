@@ -434,7 +434,7 @@
 }
 
 /* Tablets y iPads */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
+@media screen and (min-device-width: 769px) and (max-device-width: 1024px) {
 	body {
 		width: 100%;
 		margin: 0;
@@ -787,7 +787,7 @@
 }
 
 /* Laptops y Desktop PCs */
-@media screen and (min-width: 1025px) {
+@media screen and (min-device-width: 1025px) {
 	body {
 		width: 100%;
 		margin: 0;

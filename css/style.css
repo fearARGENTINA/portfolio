@@ -312,7 +312,7 @@
       section#contacto article.social a:not(:first-child) {
         margin-left: 40px; } }
 /* Tablets y iPads */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
+@media screen and (min-device-width: 769px) and (max-device-width: 1024px) {
   body {
     width: 100%;
     margin: 0; }
@@ -595,7 +595,7 @@
       section#contacto article.social a:not(:first-child) {
         margin-left: 40px; } }
 /* Laptops y Desktop PCs */
-@media screen and (min-width: 1025px) {
+@media screen and (min-device-width: 1025px) {
   body {
     width: 100%;
     margin: 0; }
