@@ -335,33 +335,389 @@
 	section#portfolio {
 		background-color: $color5;
 
-		article {			
-			margin: 50px auto;
+		div {
+			article {			
+				margin: 50px auto;
+				
+				&:first-child {
+					border-top: 4px solid $color4;
+					padding-top: 50px;
+				}
+
+				border-bottom: 4px solid $color4;
+				padding-bottom: 50px;
+
+				img, p {
+					margin: auto;
+					display: block;
+				}
+
+				img {
+					width: 60%;
+				}
+
+				p {
+					max-width: 60%;
+					font-family: "Comfortaa", sans-serif;
+					text-transform: uppercase;
+					margin-top: 20px;
+					font-size: 12px;
+					line-height: 50px; 
+				}
+			}
+		}
+		
+	}
+
+	section#contacto {
+		background-color: $color4;
+
+		article.social {
+			display: block;
+			text-align: center;
+			height: 150px;
+			width: auto;
+			padding: 0;
 			
-			&:nth-child(2) {
-				border-top: 4px solid $color4;
-				padding-top: 50px;
+			a {
+				margin: 35px 0;
+				line-height: 80px;
+				display: inline-block;
+				width: 80px;
+				height: 80px;
+				font-size: 50px;
+				text-align: center;
+				color: white;
+				transition: all 0.5s linear;
+				text-decoration: none;
+
+				@include border-radius(50%);
+
+				&.fb {
+					background-color: $facebook_color;
+					&:hover {
+						background-color: lighten($facebook_color, 20%);
+					}
+				}
+
+				&.tw {
+					background-color: $twitter_color;
+					&:hover {
+						background-color: lighten($twitter_color, 20%);;
+					}
+				}
+
+				&.ln {
+					background-color: $linkedin_color;
+					&:hover {
+						background-color: lighten($linkedin_color, 20%);;
+					}
+				}
+
+				&.email {
+					background-color: $email_color;
+					&:hover {
+						background-color: lighten($email_color, 20%);;
+					}
+				}
+
+				&:hover {
+					transform: scale(1.5);
+				}
 			}
 
-			border-bottom: 4px solid $color4;
-			padding-bottom: 50px;
+			a:not(:first-child) {
+				margin-left: 40px;
+			}
+		}
+	}
+}
 
-			img, p {
-				margin: auto;
+/* Tablets y iPads */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+	body {
+		width: 100%;
+		margin: 0;
+	}
+
+	nav {
+		z-index: 9999;
+		width: 100%;
+		height: 150px;
+		padding: 0 30px;
+		margin: auto;
+		position: fixed;
+		top: 0;
+		background-color: $color2;
+		text-transform: uppercase;
+		text-decoration: none;
+		font-family: "Comfortaa";
+		font-size: 80px;
+		box-sizing: border-box;
+		@include gradiente1;
+
+		div.menu {
+			line-height: 150px;
+			width: 200px;
+			font-weight: bold;
+			display: inline-block;
+			position: absolute;
+			color: $color1;
+
+			&:hover + ul.nav {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+
+		ul.nav {
+			display: inline-block;
+			height: 0;
+			float: left;
+			padding: 0;
+			margin: 0;
+			width: 400px;
+			visibility: hidden;
+			position: absolute;
+			top: 150px;
+			height: auto;
+			opacity: 0;
+
+			transition: opacity 1s linear;
+
+			&:hover {
+				visibility: visible;
+				opacity: 1;
+			}
+
+			a {
+				color: $color1;
+				text-decoration: none;
+				padding: 10px;
+				margin: 0;
+				font-size: 30px;
+				font-weight: bold;
 				display: block;
+				text-align: center;
+				background-color: $color3;
+
+				&:hover {
+					background-color: darken($color3, 10%);
+				}
+
+				&:not(:last-child) {
+					border-bottom: 1px solid $color4;
+				}
+		
+			}
+			
+		}
+
+		ul.social {
+			display: inline-block;
+			float: right;
+			height: 150px;
+			width: auto;
+			padding: 0;
+
+			li {
+				margin: 35px 0;
+				line-height: 80px;
+				display: inline-block;
+				width: 80px;
+				height: 80px;
+				font-size: 50px;
+				text-align: center;
+				color: white;
+				transition: all 0.5s linear;
+				@include border-radius(50%);
+
+				&.fb {
+					background-color: $facebook_color;
+					&:hover {
+						background-color: lighten($facebook_color, 20%);
+					}
+				}
+
+				&.tw {
+					background-color: $twitter_color;
+					&:hover {
+						background-color: lighten($twitter_color, 20%);;
+					}
+				}
+
+				&.ln {
+					background-color: $linkedin_color;
+					&:hover {
+						background-color: lighten($linkedin_color, 20%);;
+					}
+				}
+
+				&:hover {
+					transform: scale(1.5);
+				}
 			}
 
-			img {
-				width: 60%;
+			li:not(:first-child) {
+				margin-left: 10px;
+			}
+		}
+	}
+
+	header {
+		font-family: "Roboto", sans-serif;
+		font-weight: 900;
+		color: $color1;
+		margin: 150px 0 0 0;
+		width: 100%;
+		height: 250px;
+		padding: 100px 0;
+		overflow: hidden;
+		position: relative;
+		
+		div.page-bg {
+			background-image: url("../images/background-header.jpg");
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+			top: 0;
+			@include blur(15px);
+		}
+
+		h1 {
+			position: absolute;
+			z-index: 3;
+			height: 30px;
+			font-size: 80px;
+			margin: 60px 0 0 100px;
+			text-transform: uppercase;
+		}
+
+		h2 {
+			position: absolute;
+			z-index: 3;
+			height: 30px;
+			font-size: 40px;
+			margin: 130px 0 0 200px;
+			text-transform: uppercase;
+		}
+	}
+
+	h3 {
+		font-family: "Roboto", sans-serif;
+		font-size: 50px;
+		text-transform: uppercase;
+		font-weight: 900;
+		color: $color1;
+		max-width: 300px;
+		width: auto;
+		margin: 0 30px;
+		text-align: center;
+		border-bottom: 1px dashed $color4;
+	}
+
+	section {
+		width: 100%;
+		height: auto;
+		padding: 60px 30px;
+		box-sizing: border-box;
+	}
+
+	section#conocimientos {
+
+		background-color: $color5;
+		
+		article {
+			display: inline-block;
+			margin: 30px;
+			width: auto;
+			font-size: 50px;
+			font-family: "Roboto";
+			&.html {
+				color: $html_color;
 			}
 
-			p {
-				max-width: 60%;
-				font-family: "Comfortaa", sans-serif;
-				text-transform: uppercase;
-				margin-top: 20px;
-				font-size: 12px;
-				line-height: 50px; 
+			&.css {
+				color: $css_color;
+			}
+
+			&.sass {
+				color: $sass_color;
+			}
+
+			&.responsive {
+				color: $respon_color;
+			}
+
+			i {
+				margin-right: 15px;
+			}
+		}
+	}
+
+	section#estudios{
+		background-color: $color4;
+		
+		.ion-load-a::before {
+			@include animation-name(spin);
+			@include animation-duration(500ms);
+			@include animation-iteration-count(infinite);
+			@include animation-timing-function(linear);
+			@include animation-delay(0);
+		}
+
+		font-size: 35px;
+		font-family: "Roboto", sans-serif;
+
+		table {
+			margin: 20px auto;
+			tr {
+
+				&:not(:last-child) td {
+					padding-bottom: 30px;
+				}
+
+				i {
+					margin-right: 15px;
+				}
+			}
+		}
+	}
+	section#portfolio {
+		background-color: $color5;
+
+		div {
+			article {			
+				margin: 50px auto;
+				
+				&:first-child {
+					border-top: 4px solid $color4;
+					padding-top: 50px;
+				}
+
+				border-bottom: 4px solid $color4;
+				padding-bottom: 50px;
+
+				img, p {
+					margin: auto;
+					display: block;
+				}
+
+				img {
+					width: 60%;
+				}
+
+				p {
+					max-width: 60%;
+					font-family: "Comfortaa", sans-serif;
+					text-transform: uppercase;
+					margin-top: 20px;
+					font-size: 12px;
+					line-height: 50px; 
+				}
 			}
 		}
 	}
@@ -430,15 +786,351 @@
 	}
 }
 
-/*
-width: auto;	
-text-align: center;
-border-bottom: 1px dashed $color4;Tablets y iPads */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-
-}
-
 /* Laptops y Desktop PCs */
 @media screen and (min-width: 1025px) {
+	body {
+		width: 100%;
+		margin: 0;
+	}
 
+	nav {
+		z-index: 9999;
+		width: 100%;
+		height: 100px;
+		padding: 0 30px;
+		margin: auto;
+		position: fixed;
+		top: 0;
+		background-color: $color2;
+		text-transform: uppercase;
+		text-decoration: none;
+		font-family: "Comfortaa";
+		font-size: 45px;
+		box-sizing: border-box;
+		@include gradiente1;
+
+		div.menu {
+			line-height: 100px;
+			width: 200px;
+			font-weight: bold;
+			display: inline-block;
+			position: absolute;
+			color: $color1;
+
+			&:hover + ul.nav {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+
+		ul.nav {
+			display: inline-block;
+			height: 0;
+			float: left;
+			padding: 0;
+			margin: 0;
+			width: 400px;
+			visibility: hidden;
+			position: absolute;
+			top: 150px;
+			height: auto;
+			opacity: 0;
+
+			transition: opacity 1s linear;
+
+			&:hover {
+				visibility: visible;
+				opacity: 1;
+			}
+
+			a {
+				color: $color1;
+				text-decoration: none;
+				padding: 10px;
+				margin: 0;
+				font-size: 30px;
+				font-weight: bold;
+				display: block;
+				text-align: center;
+				background-color: $color3;
+
+				&:hover {
+					background-color: darken($color3, 10%);
+				}
+
+				&:not(:last-child) {
+					border-bottom: 1px solid $color4;
+				}
+		
+			}
+			
+		}
+
+		ul.social {
+			display: inline-block;
+			float: right;
+			height: 100px;
+			width: auto;
+			padding: 0;
+
+			li {
+				margin: 10px 0;
+				line-height: 80px;
+				display: inline-block;
+				width: 80px;
+				height: 80px;
+				font-size: 50px;
+				text-align: center;
+				color: white;
+				transition: all 0.5s linear;
+				@include border-radius(50%);
+
+				&.fb {
+					background-color: $facebook_color;
+					&:hover {
+						background-color: lighten($facebook_color, 20%);
+					}
+				}
+
+				&.tw {
+					background-color: $twitter_color;
+					&:hover {
+						background-color: lighten($twitter_color, 20%);;
+					}
+				}
+
+				&.ln {
+					background-color: $linkedin_color;
+					&:hover {
+						background-color: lighten($linkedin_color, 20%);;
+					}
+				}
+
+				&:hover {
+					transform: scale(1.2);
+				}
+			}
+
+			li:not(:first-child) {
+				margin-left: 10px;
+			}
+		}
+	}
+
+	header {
+		font-family: "Roboto", sans-serif;
+		font-weight: 900;
+		color: $color1;
+		margin: 100px 0 0 0;
+		width: 100%;
+		height: 250px;
+		padding: 100px 0;
+		overflow: hidden;
+		position: relative;
+		
+		div.page-bg {
+			background-image: url("../images/background-header.jpg");
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+			top: 0;
+			@include blur(15px);
+		}
+
+		h1 {
+			position: absolute;
+			z-index: 3;
+			height: 30px;
+			font-size: 80px;
+			margin: 60px 0 0 100px;
+			text-transform: uppercase;
+		}
+
+		h2 {
+			position: absolute;
+			z-index: 3;
+			height: 30px;
+			font-size: 40px;
+			margin: 130px 0 0 200px;
+			text-transform: uppercase;
+		}
+	}
+
+	h3 {
+		font-family: "Roboto", sans-serif;
+		font-size: 50px;
+		text-transform: uppercase;
+		font-weight: 900;
+		color: $color1;
+		max-width: 300px;
+		width: auto;
+		margin: 0 30px;
+		text-align: center;
+		border-bottom: 1px dashed $color4;
+	}
+
+	section {
+		width: 100%;
+		height: auto;
+		padding: 60px 30px;
+		box-sizing: border-box;
+	}
+
+	section#conocimientos {
+
+		background-color: $color5;
+		
+		article {
+			display: inline-block;
+			margin: 30px;
+			width: auto;
+			font-size: 50px;
+			font-family: "Roboto";
+			&.html {
+				color: $html_color;
+			}
+
+			&.css {
+				color: $css_color;
+			}
+
+			&.sass {
+				color: $sass_color;
+			}
+
+			&.responsive {
+				color: $respon_color;
+			}
+
+			i {
+				margin-right: 15px;
+			}
+		}
+	}
+
+	section#estudios{
+		background-color: $color4;
+		
+		.ion-load-a::before {
+			@include animation-name(spin);
+			@include animation-duration(500ms);
+			@include animation-iteration-count(infinite);
+			@include animation-timing-function(linear);
+			@include animation-delay(0);
+		}
+
+		font-size: 35px;
+		font-family: "Roboto", sans-serif;
+
+		table {
+			margin: 20px auto;
+			tr {
+
+				&:not(:last-child) td {
+					padding-bottom: 30px;
+				}
+
+				i {
+					margin-right: 15px;
+				}
+			}
+		}
+	}
+	section#portfolio {
+		background-color: $color5;
+
+		div {
+			margin: 0 auto;
+			text-align: center;
+			article {
+				width: 30%;
+				margin: 50px auto;
+				display: inline-block;
+
+				img, p {
+					margin: auto;
+					display: block;
+				}
+
+				img {
+					width: 60%;
+				}
+
+				p {
+					max-width: 60%;
+					font-family: "Roboto", sans-serif;
+					text-transform: uppercase;
+					margin-top: 20px;
+					font-size: 20px;
+					line-height: 30px; 
+				}
+			}
+		}
+	}
+
+	section#contacto {
+		background-color: $color4;
+
+		article.social {
+			display: block;
+			text-align: center;
+			height: 150px;
+			width: auto;
+			padding: 0;
+			
+			a {
+				margin: 35px 0;
+				line-height: 80px;
+				display: inline-block;
+				width: 80px;
+				height: 80px;
+				font-size: 50px;
+				text-align: center;
+				color: white;
+				transition: all 0.5s linear;
+				text-decoration: none;
+
+				@include border-radius(50%);
+
+				&.fb {
+					background-color: $facebook_color;
+					&:hover {
+						background-color: lighten($facebook_color, 20%);
+					}
+				}
+
+				&.tw {
+					background-color: $twitter_color;
+					&:hover {
+						background-color: lighten($twitter_color, 20%);;
+					}
+				}
+
+				&.ln {
+					background-color: $linkedin_color;
+					&:hover {
+						background-color: lighten($linkedin_color, 20%);;
+					}
+				}
+
+				&.email {
+					background-color: $email_color;
+					&:hover {
+						background-color: lighten($email_color, 20%);;
+					}
+				}
+
+				&:hover {
+					transform: scale(1.5);
+				}
+			}
+
+			a:not(:first-child) {
+				margin-left: 40px;
+			}
+		}
+	}
 }

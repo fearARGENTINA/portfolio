@@ -247,19 +247,19 @@
 
   section#portfolio {
     background-color: #a99985; }
-    section#portfolio article {
+    section#portfolio div article {
       margin: 50px auto;
       border-bottom: 4px solid #dad2bc;
       padding-bottom: 50px; }
-      section#portfolio article:nth-child(2) {
+      section#portfolio div article:first-child {
         border-top: 4px solid #dad2bc;
         padding-top: 50px; }
-      section#portfolio article img, section#portfolio article p {
+      section#portfolio div article img, section#portfolio div article p {
         margin: auto;
         display: block; }
-      section#portfolio article img {
+      section#portfolio div article img {
         width: 60%; }
-      section#portfolio article p {
+      section#portfolio div article p {
         max-width: 60%;
         font-family: "Comfortaa", sans-serif;
         text-transform: uppercase;
@@ -311,10 +311,571 @@
           transform: scale(1.5); }
       section#contacto article.social a:not(:first-child) {
         margin-left: 40px; } }
-/*
-width: auto;	
-text-align: center;
-border-bottom: 1px dashed $color4;Tablets y iPads */
+/* Tablets y iPads */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  body {
+    width: 100%;
+    margin: 0; }
+
+  nav {
+    z-index: 9999;
+    width: 100%;
+    height: 150px;
+    padding: 0 30px;
+    margin: auto;
+    position: fixed;
+    top: 0;
+    background-color: #70798c;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: "Comfortaa";
+    font-size: 80px;
+    box-sizing: border-box;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#70798c+1,708c91+100 */
+    background: #70798c;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #70798c 1%, #708c91 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #70798c 1%, #708c91 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #70798c 1%, #708c91 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#70798c', endColorstr='#708c91',GradientType=0 );
+    /* IE6-9 */ }
+    nav div.menu {
+      line-height: 150px;
+      width: 200px;
+      font-weight: bold;
+      display: inline-block;
+      position: absolute;
+      color: #252323; }
+      nav div.menu:hover + ul.nav {
+        opacity: 1;
+        visibility: visible; }
+    nav ul.nav {
+      display: inline-block;
+      height: 0;
+      float: left;
+      padding: 0;
+      margin: 0;
+      width: 400px;
+      visibility: hidden;
+      position: absolute;
+      top: 150px;
+      height: auto;
+      opacity: 0;
+      transition: opacity 1s linear; }
+      nav ul.nav:hover {
+        visibility: visible;
+        opacity: 1; }
+      nav ul.nav a {
+        color: #252323;
+        text-decoration: none;
+        padding: 10px;
+        margin: 0;
+        font-size: 30px;
+        font-weight: bold;
+        display: block;
+        text-align: center;
+        background-color: #f5f1ed; }
+        nav ul.nav a:hover {
+          background-color: #e3d8cc; }
+        nav ul.nav a:not(:last-child) {
+          border-bottom: 1px solid #dad2bc; }
+    nav ul.social {
+      display: inline-block;
+      float: right;
+      height: 150px;
+      width: auto;
+      padding: 0; }
+      nav ul.social li {
+        margin: 35px 0;
+        line-height: 80px;
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        font-size: 50px;
+        text-align: center;
+        color: white;
+        transition: all 0.5s linear;
+        -ms-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -o-border-radius: 50%;
+        border-radius: 50%; }
+        nav ul.social li.fb {
+          background-color: #365396; }
+          nav ul.social li.fb:hover {
+            background-color: #6986c9; }
+        nav ul.social li.tw {
+          background-color: #00a8f0; }
+          nav ul.social li.tw:hover {
+            background-color: #57cdff; }
+        nav ul.social li.ln {
+          background-color: #006eb3; }
+          nav ul.social li.ln:hover {
+            background-color: #1aa7ff; }
+        nav ul.social li:hover {
+          transform: scale(1.5); }
+      nav ul.social li:not(:first-child) {
+        margin-left: 10px; }
+
+  header {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    color: #252323;
+    margin: 150px 0 0 0;
+    width: 100%;
+    height: 250px;
+    padding: 100px 0;
+    overflow: hidden;
+    position: relative; }
+    header div.page-bg {
+      background-image: url("../images/background-header.jpg");
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      top: 0;
+      -webkit-filter: blur(5px);
+      -moz-filter: blur(5px);
+      -o-filter: blur(5px);
+      -ms-filter: blur(5px);
+      filter: blur(5px); }
+    header h1 {
+      position: absolute;
+      z-index: 3;
+      height: 30px;
+      font-size: 80px;
+      margin: 60px 0 0 100px;
+      text-transform: uppercase; }
+    header h2 {
+      position: absolute;
+      z-index: 3;
+      height: 30px;
+      font-size: 40px;
+      margin: 130px 0 0 200px;
+      text-transform: uppercase; }
+
+  h3 {
+    font-family: "Roboto", sans-serif;
+    font-size: 50px;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #252323;
+    max-width: 300px;
+    width: auto;
+    margin: 0 30px;
+    text-align: center;
+    border-bottom: 1px dashed #dad2bc; }
+
+  section {
+    width: 100%;
+    height: auto;
+    padding: 60px 30px;
+    box-sizing: border-box; }
+
+  section#conocimientos {
+    background-color: #a99985; }
+    section#conocimientos article {
+      display: inline-block;
+      margin: 30px;
+      width: auto;
+      font-size: 50px;
+      font-family: "Roboto"; }
+      section#conocimientos article.html {
+        color: #e34f26; }
+      section#conocimientos article.css {
+        color: #17a1ab; }
+      section#conocimientos article.sass {
+        color: #cc6699; }
+      section#conocimientos article.responsive {
+        color: black; }
+      section#conocimientos article i {
+        margin-right: 15px; }
+
+  section#estudios {
+    background-color: #dad2bc;
+    font-size: 35px;
+    font-family: "Roboto", sans-serif; }
+    section#estudios .ion-load-a::before {
+      -webkit-animation-name: spin;
+      -moz-animation-name: spin;
+      -o-animation-name: spin;
+      -ms-animation-name: spin;
+      -webkit-animation-duration: 500ms;
+      -moz-animation-duration: 500ms;
+      -o-animation-duration: 500ms;
+      -ms-animation-duration: 500ms;
+      -webkit-animation-iteration-count: infinite;
+      -moz-animation-iteration-count: infinite;
+      -ms-animation-iteration-count: infinite;
+      -o-animation-iteration-count: infinite;
+      -webkit-animation-timing-fuction: linear;
+      -moz-animation-timing-fuction: linear;
+      -ms-animation-timing-fuction: linear;
+      -o-animation-timing-fuction: linear;
+      -webkit-animation-delay: 0;
+      -moz-animation-delay: 0;
+      -ms-animation-delay: 0;
+      -o-animation-delay: 0; }
+    section#estudios table {
+      margin: 20px auto; }
+      section#estudios table tr:not(:last-child) td {
+        padding-bottom: 30px; }
+      section#estudios table tr i {
+        margin-right: 15px; }
+
+  section#portfolio {
+    background-color: #a99985; }
+    section#portfolio div article {
+      margin: 50px auto;
+      border-bottom: 4px solid #dad2bc;
+      padding-bottom: 50px; }
+      section#portfolio div article:first-child {
+        border-top: 4px solid #dad2bc;
+        padding-top: 50px; }
+      section#portfolio div article img, section#portfolio div article p {
+        margin: auto;
+        display: block; }
+      section#portfolio div article img {
+        width: 60%; }
+      section#portfolio div article p {
+        max-width: 60%;
+        font-family: "Comfortaa", sans-serif;
+        text-transform: uppercase;
+        margin-top: 20px;
+        font-size: 12px;
+        line-height: 50px; }
+
+  section#contacto {
+    background-color: #dad2bc; }
+    section#contacto article.social {
+      display: block;
+      text-align: center;
+      height: 150px;
+      width: auto;
+      padding: 0; }
+      section#contacto article.social a {
+        margin: 35px 0;
+        line-height: 80px;
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        font-size: 50px;
+        text-align: center;
+        color: white;
+        transition: all 0.5s linear;
+        text-decoration: none;
+        -ms-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -o-border-radius: 50%;
+        border-radius: 50%; }
+        section#contacto article.social a.fb {
+          background-color: #365396; }
+          section#contacto article.social a.fb:hover {
+            background-color: #6986c9; }
+        section#contacto article.social a.tw {
+          background-color: #00a8f0; }
+          section#contacto article.social a.tw:hover {
+            background-color: #57cdff; }
+        section#contacto article.social a.ln {
+          background-color: #006eb3; }
+          section#contacto article.social a.ln:hover {
+            background-color: #1aa7ff; }
+        section#contacto article.social a.email {
+          background-color: #6699ff; }
+          section#contacto article.social a.email:hover {
+            background-color: #ccddff; }
+        section#contacto article.social a:hover {
+          transform: scale(1.5); }
+      section#contacto article.social a:not(:first-child) {
+        margin-left: 40px; } }
 /* Laptops y Desktop PCs */
+@media screen and (min-width: 1025px) {
+  body {
+    width: 100%;
+    margin: 0; }
+
+  nav {
+    z-index: 9999;
+    width: 100%;
+    height: 100px;
+    padding: 0 30px;
+    margin: auto;
+    position: fixed;
+    top: 0;
+    background-color: #70798c;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: "Comfortaa";
+    font-size: 45px;
+    box-sizing: border-box;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#70798c+1,708c91+100 */
+    background: #70798c;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #70798c 1%, #708c91 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #70798c 1%, #708c91 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #70798c 1%, #708c91 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#70798c', endColorstr='#708c91',GradientType=0 );
+    /* IE6-9 */ }
+    nav div.menu {
+      line-height: 100px;
+      width: 200px;
+      font-weight: bold;
+      display: inline-block;
+      position: absolute;
+      color: #252323; }
+      nav div.menu:hover + ul.nav {
+        opacity: 1;
+        visibility: visible; }
+    nav ul.nav {
+      display: inline-block;
+      height: 0;
+      float: left;
+      padding: 0;
+      margin: 0;
+      width: 400px;
+      visibility: hidden;
+      position: absolute;
+      top: 150px;
+      height: auto;
+      opacity: 0;
+      transition: opacity 1s linear; }
+      nav ul.nav:hover {
+        visibility: visible;
+        opacity: 1; }
+      nav ul.nav a {
+        color: #252323;
+        text-decoration: none;
+        padding: 10px;
+        margin: 0;
+        font-size: 30px;
+        font-weight: bold;
+        display: block;
+        text-align: center;
+        background-color: #f5f1ed; }
+        nav ul.nav a:hover {
+          background-color: #e3d8cc; }
+        nav ul.nav a:not(:last-child) {
+          border-bottom: 1px solid #dad2bc; }
+    nav ul.social {
+      display: inline-block;
+      float: right;
+      height: 100px;
+      width: auto;
+      padding: 0; }
+      nav ul.social li {
+        margin: 10px 0;
+        line-height: 80px;
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        font-size: 50px;
+        text-align: center;
+        color: white;
+        transition: all 0.5s linear;
+        -ms-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -o-border-radius: 50%;
+        border-radius: 50%; }
+        nav ul.social li.fb {
+          background-color: #365396; }
+          nav ul.social li.fb:hover {
+            background-color: #6986c9; }
+        nav ul.social li.tw {
+          background-color: #00a8f0; }
+          nav ul.social li.tw:hover {
+            background-color: #57cdff; }
+        nav ul.social li.ln {
+          background-color: #006eb3; }
+          nav ul.social li.ln:hover {
+            background-color: #1aa7ff; }
+        nav ul.social li:hover {
+          transform: scale(1.2); }
+      nav ul.social li:not(:first-child) {
+        margin-left: 10px; }
+
+  header {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    color: #252323;
+    margin: 100px 0 0 0;
+    width: 100%;
+    height: 250px;
+    padding: 100px 0;
+    overflow: hidden;
+    position: relative; }
+    header div.page-bg {
+      background-image: url("../images/background-header.jpg");
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      top: 0;
+      -webkit-filter: blur(5px);
+      -moz-filter: blur(5px);
+      -o-filter: blur(5px);
+      -ms-filter: blur(5px);
+      filter: blur(5px); }
+    header h1 {
+      position: absolute;
+      z-index: 3;
+      height: 30px;
+      font-size: 80px;
+      margin: 60px 0 0 100px;
+      text-transform: uppercase; }
+    header h2 {
+      position: absolute;
+      z-index: 3;
+      height: 30px;
+      font-size: 40px;
+      margin: 130px 0 0 200px;
+      text-transform: uppercase; }
+
+  h3 {
+    font-family: "Roboto", sans-serif;
+    font-size: 50px;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #252323;
+    max-width: 300px;
+    width: auto;
+    margin: 0 30px;
+    text-align: center;
+    border-bottom: 1px dashed #dad2bc; }
+
+  section {
+    width: 100%;
+    height: auto;
+    padding: 60px 30px;
+    box-sizing: border-box; }
+
+  section#conocimientos {
+    background-color: #a99985; }
+    section#conocimientos article {
+      display: inline-block;
+      margin: 30px;
+      width: auto;
+      font-size: 50px;
+      font-family: "Roboto"; }
+      section#conocimientos article.html {
+        color: #e34f26; }
+      section#conocimientos article.css {
+        color: #17a1ab; }
+      section#conocimientos article.sass {
+        color: #cc6699; }
+      section#conocimientos article.responsive {
+        color: black; }
+      section#conocimientos article i {
+        margin-right: 15px; }
+
+  section#estudios {
+    background-color: #dad2bc;
+    font-size: 35px;
+    font-family: "Roboto", sans-serif; }
+    section#estudios .ion-load-a::before {
+      -webkit-animation-name: spin;
+      -moz-animation-name: spin;
+      -o-animation-name: spin;
+      -ms-animation-name: spin;
+      -webkit-animation-duration: 500ms;
+      -moz-animation-duration: 500ms;
+      -o-animation-duration: 500ms;
+      -ms-animation-duration: 500ms;
+      -webkit-animation-iteration-count: infinite;
+      -moz-animation-iteration-count: infinite;
+      -ms-animation-iteration-count: infinite;
+      -o-animation-iteration-count: infinite;
+      -webkit-animation-timing-fuction: linear;
+      -moz-animation-timing-fuction: linear;
+      -ms-animation-timing-fuction: linear;
+      -o-animation-timing-fuction: linear;
+      -webkit-animation-delay: 0;
+      -moz-animation-delay: 0;
+      -ms-animation-delay: 0;
+      -o-animation-delay: 0; }
+    section#estudios table {
+      margin: 20px auto; }
+      section#estudios table tr:not(:last-child) td {
+        padding-bottom: 30px; }
+      section#estudios table tr i {
+        margin-right: 15px; }
+
+  section#portfolio {
+    background-color: #a99985; }
+    section#portfolio div {
+      margin: 0 auto;
+      text-align: center; }
+      section#portfolio div article {
+        width: 30%;
+        margin: 50px auto;
+        display: inline-block; }
+        section#portfolio div article img, section#portfolio div article p {
+          margin: auto;
+          display: block; }
+        section#portfolio div article img {
+          width: 60%; }
+        section#portfolio div article p {
+          max-width: 60%;
+          font-family: "Roboto", sans-serif;
+          text-transform: uppercase;
+          margin-top: 20px;
+          font-size: 20px;
+          line-height: 30px; }
+
+  section#contacto {
+    background-color: #dad2bc; }
+    section#contacto article.social {
+      display: block;
+      text-align: center;
+      height: 150px;
+      width: auto;
+      padding: 0; }
+      section#contacto article.social a {
+        margin: 35px 0;
+        line-height: 80px;
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        font-size: 50px;
+        text-align: center;
+        color: white;
+        transition: all 0.5s linear;
+        text-decoration: none;
+        -ms-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -o-border-radius: 50%;
+        border-radius: 50%; }
+        section#contacto article.social a.fb {
+          background-color: #365396; }
+          section#contacto article.social a.fb:hover {
+            background-color: #6986c9; }
+        section#contacto article.social a.tw {
+          background-color: #00a8f0; }
+          section#contacto article.social a.tw:hover {
+            background-color: #57cdff; }
+        section#contacto article.social a.ln {
+          background-color: #006eb3; }
+          section#contacto article.social a.ln:hover {
+            background-color: #1aa7ff; }
+        section#contacto article.social a.email {
+          background-color: #6699ff; }
+          section#contacto article.social a.email:hover {
+            background-color: #ccddff; }
+        section#contacto article.social a:hover {
+          transform: scale(1.5); }
+      section#contacto article.social a:not(:first-child) {
+        margin-left: 40px; } }
 
 /*# sourceMappingURL=style.css.map */
