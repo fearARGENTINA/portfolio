@@ -305,7 +305,7 @@
 	}
 
 	section#estudios{
-		background-color: $color3;
+		background-color: $color4;
 		
 		.ion-load-a::before {
 			@include animation-name(spin);
@@ -329,6 +329,102 @@
 				i {
 					margin-right: 15px;
 				}
+			}
+		}
+	}
+	section#portfolio {
+		background-color: $color5;
+
+		article {			
+			margin: 50px auto;
+			
+			&:nth-child(2) {
+				border-top: 4px solid $color4;
+				padding-top: 50px;
+			}
+
+			border-bottom: 4px solid $color4;
+			padding-bottom: 50px;
+
+			img, p {
+				margin: auto;
+				display: block;
+			}
+
+			img {
+				width: 60%;
+			}
+
+			p {
+				max-width: 60%;
+				font-family: "Comfortaa", sans-serif;
+				text-transform: uppercase;
+				margin-top: 20px;
+				font-size: 12px;
+				line-height: 50px; 
+			}
+		}
+	}
+
+	section#contacto {
+		background-color: $color4;
+
+		article.social {
+			display: block;
+			text-align: center;
+			height: 150px;
+			width: auto;
+			padding: 0;
+			
+			a {
+				margin: 35px 0;
+				line-height: 80px;
+				display: inline-block;
+				width: 80px;
+				height: 80px;
+				font-size: 50px;
+				text-align: center;
+				color: white;
+				transition: all 0.5s linear;
+				text-decoration: none;
+
+				@include border-radius(50%);
+
+				&.fb {
+					background-color: $facebook_color;
+					&:hover {
+						background-color: lighten($facebook_color, 20%);
+					}
+				}
+
+				&.tw {
+					background-color: $twitter_color;
+					&:hover {
+						background-color: lighten($twitter_color, 20%);;
+					}
+				}
+
+				&.ln {
+					background-color: $linkedin_color;
+					&:hover {
+						background-color: lighten($linkedin_color, 20%);;
+					}
+				}
+
+				&.email {
+					background-color: $email_color;
+					&:hover {
+						background-color: lighten($email_color, 20%);;
+					}
+				}
+
+				&:hover {
+					transform: scale(1.5);
+				}
+			}
+
+			a:not(:first-child) {
+				margin-left: 40px;
 			}
 		}
 	}

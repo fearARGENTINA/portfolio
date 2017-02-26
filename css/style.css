@@ -214,7 +214,7 @@
         margin-right: 15px; }
 
   section#estudios {
-    background-color: #f5f1ed;
+    background-color: #dad2bc;
     font-size: 35px;
     font-family: "Roboto", sans-serif; }
     section#estudios .ion-load-a::before {
@@ -243,7 +243,74 @@
       section#estudios table tr:not(:last-child) td {
         padding-bottom: 30px; }
       section#estudios table tr i {
-        margin-right: 15px; } }
+        margin-right: 15px; }
+
+  section#portfolio {
+    background-color: #a99985; }
+    section#portfolio article {
+      margin: 50px auto;
+      border-bottom: 4px solid #dad2bc;
+      padding-bottom: 50px; }
+      section#portfolio article:nth-child(2) {
+        border-top: 4px solid #dad2bc;
+        padding-top: 50px; }
+      section#portfolio article img, section#portfolio article p {
+        margin: auto;
+        display: block; }
+      section#portfolio article img {
+        width: 60%; }
+      section#portfolio article p {
+        max-width: 60%;
+        font-family: "Comfortaa", sans-serif;
+        text-transform: uppercase;
+        margin-top: 20px;
+        font-size: 12px;
+        line-height: 50px; }
+
+  section#contacto {
+    background-color: #dad2bc; }
+    section#contacto article.social {
+      display: block;
+      text-align: center;
+      height: 150px;
+      width: auto;
+      padding: 0; }
+      section#contacto article.social a {
+        margin: 35px 0;
+        line-height: 80px;
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        font-size: 50px;
+        text-align: center;
+        color: white;
+        transition: all 0.5s linear;
+        text-decoration: none;
+        -ms-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -o-border-radius: 50%;
+        border-radius: 50%; }
+        section#contacto article.social a.fb {
+          background-color: #365396; }
+          section#contacto article.social a.fb:hover {
+            background-color: #6986c9; }
+        section#contacto article.social a.tw {
+          background-color: #00a8f0; }
+          section#contacto article.social a.tw:hover {
+            background-color: #57cdff; }
+        section#contacto article.social a.ln {
+          background-color: #006eb3; }
+          section#contacto article.social a.ln:hover {
+            background-color: #1aa7ff; }
+        section#contacto article.social a.email {
+          background-color: #6699ff; }
+          section#contacto article.social a.email:hover {
+            background-color: #ccddff; }
+        section#contacto article.social a:hover {
+          transform: scale(1.5); }
+      section#contacto article.social a:not(:first-child) {
+        margin-left: 40px; } }
 /*
 width: auto;	
 text-align: center;
