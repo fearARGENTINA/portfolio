@@ -1,7 +1,32 @@
 @import "colors";
-@import "http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css";
+@import "https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css";
 @import "social_colors";
 @import "gradientes";
+
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+
+@-ms-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+
+@-o-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
 
 @mixin border-radius($radio) {
 	-ms-border-radius: $radio;
@@ -19,17 +44,52 @@
 	filter: blur(5px);	
 }
 
+@mixin animation-name($nombre) {
+	-webkit-animation-name: spin;
+	-moz-animation-name: spin;
+	-o-animation-name: spin;
+	-ms-animation-name: spin;
+}
+
+@mixin animation-duration($tiempo) {
+	-webkit-animation-duration: $tiempo;
+	-moz-animation-duration: $tiempo;
+	-o-animation-duration: $tiempo;
+	-ms-animation-duration: $tiempo;
+}
+
+@mixin animation-iteration-count($tipo) {
+	-webkit-animation-iteration-count: $tipo;
+	-moz-animation-iteration-count: $tipo;
+	-ms-animation-iteration-count: $tipo;
+	-o-animation-iteration-count: $tipo;
+}
+
+@mixin animation-timing-function($tipo) {
+	-webkit-animation-timing-fuction: $tipo;
+	-moz-animation-timing-fuction: $tipo;
+	-ms-animation-timing-fuction: $tipo;
+	-o-animation-timing-fuction: $tipo;
+}
+
+@mixin animation-delay($tiempo) {
+	-webkit-animation-delay: $tiempo;
+	-moz-animation-delay: $tiempo;
+	-ms-animation-delay: $tiempo;
+	-o-animation-delay: $tiempo;
+}
+
 /*Smartphones */
 @media screen and (max-device-width: 768px) {
 	body {
-		max-width: 768px;
 		width: 100%;
+		margin: 0;
 	}
 
 	nav {
 		z-index: 9999;
 		width: 100%;
-		height: 40px;
+		height: 150px;
 		padding: 0 30px;
 		margin: auto;
 		position: fixed;
@@ -38,11 +98,12 @@
 		text-transform: uppercase;
 		text-decoration: none;
 		font-family: "Comfortaa";
+		font-size: 80px;
 		box-sizing: border-box;
 		@include gradiente1;
 
 		div.menu {
-			line-height: 40px;
+			line-height: 150px;
 			width: 200px;
 			font-weight: bold;
 			display: inline-block;
@@ -61,10 +122,10 @@
 			float: left;
 			padding: 0;
 			margin: 0;
-			width: 200px;
+			width: 400px;
 			visibility: hidden;
-			position: relative;
-			top: 40px;
+			position: absolute;
+			top: 150px;
 			height: auto;
 			opacity: 0;
 
@@ -78,15 +139,16 @@
 			a {
 				color: $color1;
 				text-decoration: none;
-				padding: 5px;
+				padding: 10px;
 				margin: 0;
-				font-size: 10px;
+				font-size: 30px;
 				font-weight: bold;
 				display: block;
 				text-align: center;
-					
+				background-color: $color3;
+
 				&:hover {
-					background-color: $color3;
+					background-color: darken($color3, 10%);
 				}
 
 				&:not(:last-child) {
@@ -100,17 +162,17 @@
 		ul.social {
 			display: inline-block;
 			float: right;
-			height: 40px;
+			height: 150px;
 			width: auto;
 			padding: 0;
 
 			li {
-				margin: 10px 0;
-				line-height: 20px;
+				margin: 35px 0;
+				line-height: 80px;
 				display: inline-block;
-				width: 20px;
-				height: 20px;
-				font-size: 14px;
+				width: 80px;
+				height: 80px;
+				font-size: 50px;
 				text-align: center;
 				color: white;
 				transition: all 0.5s linear;
@@ -152,145 +214,923 @@
 		font-family: "Roboto", sans-serif;
 		font-weight: 900;
 		color: $color1;
-		margin: 10px 0 0 0;
+		margin: 150px 0 0 0;
 		width: 100%;
 		height: 250px;
-		background-image: url("../images/background-header.jpg");
-		background-size: cover;
-		padding: 60px 0;
+		padding: 100px 0;
 		overflow: hidden;
 		position: relative;
-
-		&::before {
-			content: "";
-			z-index: 1;
+		
+		div.page-bg {
+			background-image: url("../images/background-header.jpg");
+			position: absolute;
 			width: 100%;
 			height: 100%;
-			background: inherit;
-			@include blur(2px);
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+			top: 0;
+			@include blur(15px);
 		}
-		
+
 		h1 {
+			position: absolute;
 			z-index: 3;
 			height: 30px;
-			font-size: 30px;
+			font-size: 80px;
 			margin: 60px 0 0 100px;
 			text-transform: uppercase;
 		}
 
 		h2 {
+			position: absolute;
 			z-index: 3;
 			height: 30px;
-			font-size: 20px;
-			margin: 10px 0 0 200px;
+			font-size: 40px;
+			margin: 130px 0 0 200px;
 			text-transform: uppercase;
 		}
+	}
+
+	h3 {
+		font-family: "Roboto", sans-serif;
+		font-size: 50px;
+		text-transform: uppercase;
+		font-weight: 900;
+		color: $color1;
+		max-width: 300px;
+		width: auto;
+		margin: 0 30px;
+		text-align: center;
+		border-bottom: 1px dashed $color4;
 	}
 
 	section {
 		width: 100%;
 		height: auto;
-		background-color: $color5;
-		padding: 30px;
+		padding: 60px 30px;
 		box-sizing: border-box;
+	}
 
-		* {
-			margin: auto;
-		}
+	section#conocimientos {
 
-		h3 {
-			font-family: "Roboto", sans-serif;
-			font-size: 20px;
-			text-transform: uppercase;
-			font-weight: 900;
-			color: $color1;
-			max-width: 200px;
+		background-color: $color5;
+		
+		article {
+			display: inline-block;
+			margin: 30px;
 			width: auto;
-			margin: 0 30px;
-			text-align: center;
-			border-bottom: 1px dashed $color4;
+			font-size: 50px;
+			font-family: "Roboto";
+			&.html {
+				color: $html_color;
+			}
+
+			&.css {
+				color: $css_color;
+			}
+
+			&.sass {
+				color: $sass_color;
+			}
+
+			&.responsive {
+				color: $respon_color;
+			}
+
+			i {
+				margin-right: 15px;
+			}
+		}
+	}
+
+	section#estudios{
+		background-color: $color4;
+		
+		.ion-load-a::before {
+			@include animation-name(spin);
+			@include animation-duration(500ms);
+			@include animation-iteration-count(infinite);
+			@include animation-timing-function(linear);
+			@include animation-delay(0);
 		}
 
-		div.contenedor {
+		font-size: 35px;
+		font-family: "Roboto", sans-serif;
 
-			margin:10px 0;
-			width: 100%;
+		table {
+			margin: 20px auto;
+			tr {
 
-			article {
-				position: relative;
-				font-size: 60px;
-				display: inline-block;
-				margin: 30px;
+				&:not(:last-child) td {
+					padding-bottom: 30px;
+				}
 
-				&::after {
-					text-transform: uppercase;
-					font-size: 20px;
-					font-family: "Comfortaa";
-					position: absolute;
-					bottom: -20px;
+				i {
+					margin-right: 15px;
+				}
+			}
+		}
+	}
+	section#portfolio {
+		background-color: $color5;
+
+		div {
+			article {			
+				margin: 50px auto;
+				
+				&:first-child {
+					border-top: 4px solid $color4;
+					padding-top: 50px;
+				}
+
+				border-bottom: 4px solid $color4;
+				padding-bottom: 50px;
+
+				img, p {
+					margin: auto;
 					display: block;
 				}
 
-				&.ion-social-html5 {
-					color: #e34f26;
-				
-					&::after {
-						content: "HTML5";
-						left: -20px;
+				img {
+					width: 60%;
+				}
+
+				p {
+					max-width: 60%;
+					font-family: "Comfortaa", sans-serif;
+					text-transform: uppercase;
+					margin-top: 20px;
+					font-size: 12px;
+					line-height: 50px; 
+				}
+			}
+		}
+		
+	}
+
+	section#contacto {
+		background-color: $color4;
+
+		article.social {
+			display: block;
+			text-align: center;
+			height: 150px;
+			width: auto;
+			padding: 0;
+			
+			a {
+				margin: 35px 0;
+				line-height: 80px;
+				display: inline-block;
+				width: 80px;
+				height: 80px;
+				font-size: 50px;
+				text-align: center;
+				color: white;
+				transition: all 0.5s linear;
+				text-decoration: none;
+
+				@include border-radius(50%);
+
+				&.fb {
+					background-color: $facebook_color;
+					&:hover {
+						background-color: lighten($facebook_color, 20%);
 					}
 				}
 
-				&.ion-social-css3 {
-					color: #3b5998;
-
-					&::after {
-						content: "CSS3";
-						left: -10px;
+				&.tw {
+					background-color: $twitter_color;
+					&:hover {
+						background-color: lighten($twitter_color, 20%);;
 					}
 				}
 
-				&.ion-social-sass {
-					color: #fd5c63;
-				
-					&::after {
-						left: -3px;
-						content: "SASS";
+				&.ln {
+					background-color: $linkedin_color;
+					&:hover {
+						background-color: lighten($linkedin_color, 20%);;
 					}
 				}
 
-				&.ion-social-python {
-					color: #4584b6;
-
-					&::after {
-						left: -10px;
-						text-transform: none;
-						content: "Python";
+				&.email {
+					background-color: $email_color;
+					&:hover {
+						background-color: lighten($email_color, 20%);;
 					}
 				}
 
-				&.ion-android-phone-portrait {
-					color: #a4c639;
-
-					&::after {
-						left: -30px;
-						content: "Responsive";
-						text-transform: none;
-					}
+				&:hover {
+					transform: scale(1.5);
 				}
+			}
+
+			a:not(:first-child) {
+				margin-left: 40px;
 			}
 		}
 	}
 }
 
-/*
-width: auto;
-text-align: center;
-border-bottom: 1px dashed $color4;Tablets y iPads */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
+/* Tablets y iPads */
+@media screen and (min-device-width: 769px) and (max-device-width: 1024px) {
+	body {
+		width: 100%;
+		margin: 0;
+	}
 
+	nav {
+		z-index: 9999;
+		width: 100%;
+		height: 150px;
+		padding: 0 30px;
+		margin: auto;
+		position: fixed;
+		top: 0;
+		background-color: $color2;
+		text-transform: uppercase;
+		text-decoration: none;
+		font-family: "Comfortaa";
+		font-size: 80px;
+		box-sizing: border-box;
+		@include gradiente1;
+
+		div.menu {
+			line-height: 150px;
+			width: 200px;
+			font-weight: bold;
+			display: inline-block;
+			position: absolute;
+			color: $color1;
+
+			&:hover + ul.nav {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+
+		ul.nav {
+			display: inline-block;
+			height: 0;
+			float: left;
+			padding: 0;
+			margin: 0;
+			width: 400px;
+			visibility: hidden;
+			position: absolute;
+			top: 150px;
+			height: auto;
+			opacity: 0;
+
+			transition: opacity 1s linear;
+
+			&:hover {
+				visibility: visible;
+				opacity: 1;
+			}
+
+			a {
+				color: $color1;
+				text-decoration: none;
+				padding: 10px;
+				margin: 0;
+				font-size: 30px;
+				font-weight: bold;
+				display: block;
+				text-align: center;
+				background-color: $color3;
+
+				&:hover {
+					background-color: darken($color3, 10%);
+				}
+
+				&:not(:last-child) {
+					border-bottom: 1px solid $color4;
+				}
+		
+			}
+			
+		}
+
+		ul.social {
+			display: inline-block;
+			float: right;
+			height: 150px;
+			width: auto;
+			padding: 0;
+
+			li {
+				margin: 35px 0;
+				line-height: 80px;
+				display: inline-block;
+				width: 80px;
+				height: 80px;
+				font-size: 50px;
+				text-align: center;
+				color: white;
+				transition: all 0.5s linear;
+				@include border-radius(50%);
+
+				&.fb {
+					background-color: $facebook_color;
+					&:hover {
+						background-color: lighten($facebook_color, 20%);
+					}
+				}
+
+				&.tw {
+					background-color: $twitter_color;
+					&:hover {
+						background-color: lighten($twitter_color, 20%);;
+					}
+				}
+
+				&.ln {
+					background-color: $linkedin_color;
+					&:hover {
+						background-color: lighten($linkedin_color, 20%);;
+					}
+				}
+
+				&:hover {
+					transform: scale(1.5);
+				}
+			}
+
+			li:not(:first-child) {
+				margin-left: 10px;
+			}
+		}
+	}
+
+	header {
+		font-family: "Roboto", sans-serif;
+		font-weight: 900;
+		color: $color1;
+		margin: 150px 0 0 0;
+		width: 100%;
+		height: 250px;
+		padding: 100px 0;
+		overflow: hidden;
+		position: relative;
+		
+		div.page-bg {
+			background-image: url("../images/background-header.jpg");
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+			top: 0;
+			@include blur(15px);
+		}
+
+		h1 {
+			position: absolute;
+			z-index: 3;
+			height: 30px;
+			font-size: 80px;
+			margin: 60px 0 0 100px;
+			text-transform: uppercase;
+		}
+
+		h2 {
+			position: absolute;
+			z-index: 3;
+			height: 30px;
+			font-size: 40px;
+			margin: 130px 0 0 200px;
+			text-transform: uppercase;
+		}
+	}
+
+	h3 {
+		font-family: "Roboto", sans-serif;
+		font-size: 50px;
+		text-transform: uppercase;
+		font-weight: 900;
+		color: $color1;
+		max-width: 300px;
+		width: auto;
+		margin: 0 30px;
+		text-align: center;
+		border-bottom: 1px dashed $color4;
+	}
+
+	section {
+		width: 100%;
+		height: auto;
+		padding: 60px 30px;
+		box-sizing: border-box;
+	}
+
+	section#conocimientos {
+
+		background-color: $color5;
+		
+		article {
+			display: inline-block;
+			margin: 30px;
+			width: auto;
+			font-size: 50px;
+			font-family: "Roboto";
+			&.html {
+				color: $html_color;
+			}
+
+			&.css {
+				color: $css_color;
+			}
+
+			&.sass {
+				color: $sass_color;
+			}
+
+			&.responsive {
+				color: $respon_color;
+			}
+
+			i {
+				margin-right: 15px;
+			}
+		}
+	}
+
+	section#estudios{
+		background-color: $color4;
+		
+		.ion-load-a::before {
+			@include animation-name(spin);
+			@include animation-duration(500ms);
+			@include animation-iteration-count(infinite);
+			@include animation-timing-function(linear);
+			@include animation-delay(0);
+		}
+
+		font-size: 35px;
+		font-family: "Roboto", sans-serif;
+
+		table {
+			margin: 20px auto;
+			tr {
+
+				&:not(:last-child) td {
+					padding-bottom: 30px;
+				}
+
+				i {
+					margin-right: 15px;
+				}
+			}
+		}
+	}
+	section#portfolio {
+		background-color: $color5;
+
+		div {
+			article {			
+				margin: 50px auto;
+				
+				&:first-child {
+					border-top: 4px solid $color4;
+					padding-top: 50px;
+				}
+
+				border-bottom: 4px solid $color4;
+				padding-bottom: 50px;
+
+				img, p {
+					margin: auto;
+					display: block;
+				}
+
+				img {
+					width: 60%;
+				}
+
+				p {
+					max-width: 60%;
+					font-family: "Comfortaa", sans-serif;
+					text-transform: uppercase;
+					margin-top: 20px;
+					font-size: 12px;
+					line-height: 50px; 
+				}
+			}
+		}
+	}
+
+	section#contacto {
+		background-color: $color4;
+
+		article.social {
+			display: block;
+			text-align: center;
+			height: 150px;
+			width: auto;
+			padding: 0;
+			
+			a {
+				margin: 35px 0;
+				line-height: 80px;
+				display: inline-block;
+				width: 80px;
+				height: 80px;
+				font-size: 50px;
+				text-align: center;
+				color: white;
+				transition: all 0.5s linear;
+				text-decoration: none;
+
+				@include border-radius(50%);
+
+				&.fb {
+					background-color: $facebook_color;
+					&:hover {
+						background-color: lighten($facebook_color, 20%);
+					}
+				}
+
+				&.tw {
+					background-color: $twitter_color;
+					&:hover {
+						background-color: lighten($twitter_color, 20%);;
+					}
+				}
+
+				&.ln {
+					background-color: $linkedin_color;
+					&:hover {
+						background-color: lighten($linkedin_color, 20%);;
+					}
+				}
+
+				&.email {
+					background-color: $email_color;
+					&:hover {
+						background-color: lighten($email_color, 20%);;
+					}
+				}
+
+				&:hover {
+					transform: scale(1.5);
+				}
+			}
+
+			a:not(:first-child) {
+				margin-left: 40px;
+			}
+		}
+	}
 }
 
 /* Laptops y Desktop PCs */
-@media screen and (min-width: 1025px) {
+@media screen and (min-device-width: 1025px) {
+	body {
+		width: 100%;
+		margin: 0;
+	}
 
+	nav {
+		z-index: 9999;
+		width: 100%;
+		height: 100px;
+		padding: 0 30px;
+		margin: auto;
+		position: fixed;
+		top: 0;
+		background-color: $color2;
+		text-transform: uppercase;
+		text-decoration: none;
+		font-family: "Comfortaa";
+		font-size: 45px;
+		box-sizing: border-box;
+		@include gradiente1;
+
+		div.menu {
+			line-height: 100px;
+			width: 200px;
+			font-weight: bold;
+			display: inline-block;
+			position: absolute;
+			color: $color1;
+
+			&:hover + ul.nav {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+
+		ul.nav {
+			display: inline-block;
+			height: 0;
+			float: left;
+			padding: 0;
+			margin: 0;
+			width: 400px;
+			visibility: hidden;
+			position: absolute;
+			top: 150px;
+			height: auto;
+			opacity: 0;
+
+			transition: opacity 1s linear;
+
+			&:hover {
+				visibility: visible;
+				opacity: 1;
+			}
+
+			a {
+				color: $color1;
+				text-decoration: none;
+				padding: 10px;
+				margin: 0;
+				font-size: 30px;
+				font-weight: bold;
+				display: block;
+				text-align: center;
+				background-color: $color3;
+
+				&:hover {
+					background-color: darken($color3, 10%);
+				}
+
+				&:not(:last-child) {
+					border-bottom: 1px solid $color4;
+				}
+		
+			}
+			
+		}
+
+		ul.social {
+			display: inline-block;
+			float: right;
+			height: 100px;
+			width: auto;
+			padding: 0;
+
+			li {
+				margin: 10px 0;
+				line-height: 80px;
+				display: inline-block;
+				width: 80px;
+				height: 80px;
+				font-size: 50px;
+				text-align: center;
+				color: white;
+				transition: all 0.5s linear;
+				@include border-radius(50%);
+
+				&.fb {
+					background-color: $facebook_color;
+					&:hover {
+						background-color: lighten($facebook_color, 20%);
+					}
+				}
+
+				&.tw {
+					background-color: $twitter_color;
+					&:hover {
+						background-color: lighten($twitter_color, 20%);;
+					}
+				}
+
+				&.ln {
+					background-color: $linkedin_color;
+					&:hover {
+						background-color: lighten($linkedin_color, 20%);;
+					}
+				}
+
+				&:hover {
+					transform: scale(1.2);
+				}
+			}
+
+			li:not(:first-child) {
+				margin-left: 10px;
+			}
+		}
+	}
+
+	header {
+		font-family: "Roboto", sans-serif;
+		font-weight: 900;
+		color: $color1;
+		margin: 100px 0 0 0;
+		width: 100%;
+		height: 250px;
+		padding: 100px 0;
+		overflow: hidden;
+		position: relative;
+		
+		div.page-bg {
+			background-image: url("../images/background-header.jpg");
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+			top: 0;
+			@include blur(15px);
+		}
+
+		h1 {
+			position: absolute;
+			z-index: 3;
+			height: 30px;
+			font-size: 80px;
+			margin: 60px 0 0 100px;
+			text-transform: uppercase;
+		}
+
+		h2 {
+			position: absolute;
+			z-index: 3;
+			height: 30px;
+			font-size: 40px;
+			margin: 130px 0 0 200px;
+			text-transform: uppercase;
+		}
+	}
+
+	h3 {
+		font-family: "Roboto", sans-serif;
+		font-size: 50px;
+		text-transform: uppercase;
+		font-weight: 900;
+		color: $color1;
+		max-width: 300px;
+		width: auto;
+		margin: 0 30px;
+		text-align: center;
+		border-bottom: 1px dashed $color4;
+	}
+
+	section {
+		width: 100%;
+		height: auto;
+		padding: 60px 30px;
+		box-sizing: border-box;
+	}
+
+	section#conocimientos {
+
+		background-color: $color5;
+		
+		article {
+			display: inline-block;
+			margin: 30px;
+			width: auto;
+			font-size: 50px;
+			font-family: "Roboto";
+			&.html {
+				color: $html_color;
+			}
+
+			&.css {
+				color: $css_color;
+			}
+
+			&.sass {
+				color: $sass_color;
+			}
+
+			&.responsive {
+				color: $respon_color;
+			}
+
+			i {
+				margin-right: 15px;
+			}
+		}
+	}
+
+	section#estudios{
+		background-color: $color4;
+		
+		.ion-load-a::before {
+			@include animation-name(spin);
+			@include animation-duration(500ms);
+			@include animation-iteration-count(infinite);
+			@include animation-timing-function(linear);
+			@include animation-delay(0);
+		}
+
+		font-size: 35px;
+		font-family: "Roboto", sans-serif;
+
+		table {
+			margin: 20px auto;
+			tr {
+
+				&:not(:last-child) td {
+					padding-bottom: 30px;
+				}
+
+				i {
+					margin-right: 15px;
+				}
+			}
+		}
+	}
+	section#portfolio {
+		background-color: $color5;
+
+		div {
+			margin: 0 auto;
+			text-align: center;
+			article {
+				width: 30%;
+				margin: 50px auto;
+				display: inline-block;
+
+				img, p {
+					margin: auto;
+					display: block;
+				}
+
+				img {
+					width: 60%;
+				}
+
+				p {
+					max-width: 60%;
+					font-family: "Roboto", sans-serif;
+					text-transform: uppercase;
+					margin-top: 20px;
+					font-size: 20px;
+					line-height: 30px; 
+				}
+			}
+		}
+	}
+
+	section#contacto {
+		background-color: $color4;
+
+		article.social {
+			display: block;
+			text-align: center;
+			height: 150px;
+			width: auto;
+			padding: 0;
+			
+			a {
+				margin: 35px 0;
+				line-height: 80px;
+				display: inline-block;
+				width: 80px;
+				height: 80px;
+				font-size: 50px;
+				text-align: center;
+				color: white;
+				transition: all 0.5s linear;
+				text-decoration: none;
+
+				@include border-radius(50%);
+
+				&.fb {
+					background-color: $facebook_color;
+					&:hover {
+						background-color: lighten($facebook_color, 20%);
+					}
+				}
+
+				&.tw {
+					background-color: $twitter_color;
+					&:hover {
+						background-color: lighten($twitter_color, 20%);;
+					}
+				}
+
+				&.ln {
+					background-color: $linkedin_color;
+					&:hover {
+						background-color: lighten($linkedin_color, 20%);;
+					}
+				}
+
+				&.email {
+					background-color: $email_color;
+					&:hover {
+						background-color: lighten($email_color, 20%);;
+					}
+				}
+
+				&:hover {
+					transform: scale(1.5);
+				}
+			}
+
+			a:not(:first-child) {
+				margin-left: 40px;
+			}
+		}
+	}
 }
