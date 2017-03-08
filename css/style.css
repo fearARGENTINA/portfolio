@@ -644,7 +644,7 @@
       width: 400px;
       visibility: hidden;
       position: absolute;
-      top: 150px;
+      top: 100px;
       height: auto;
       opacity: 0;
       transition: opacity 1s linear; }
